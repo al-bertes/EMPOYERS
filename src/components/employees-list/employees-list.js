@@ -2,14 +2,14 @@ import EmployeesListItem from "../employees-list-item/employees-list-item";
 
 import './employees-list.css';
 
-const EmployeesList = () => {
+const EmployeesList = ({employes}) => {
+
     return (
         <ul className="app-list list-group">
-            <EmployeesListItem/>
-            <EmployeesListItem/>
-            <EmployeesListItem/>
+          {employes.map((item) =>  <EmployeesListItem key={item.id} {...item}/>)}
         </ul>
     )
 }
 
 export default EmployeesList;
+
