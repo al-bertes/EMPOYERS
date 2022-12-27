@@ -6,20 +6,19 @@ class EmployeesAddForm extends React.Component {
     super(props);
     this.state = {
       form: {
+        name: '',
         salary: ''
       }
     }
   }
   handleInformEmpoyers = (e) => this.setState({[e.target.name]: e.target.value});
-  submitForm = (e) => {
-    e.preventDefault();
-    console.log(this.state)
-  }
+
   render() {
+    const { addEmploy } = this.props;
     return (
       <div className="app-add-form">
         <h3>Добавьте нового сотрудника</h3>
-        <form className="add-form d-flex" onSubmit={this.submitForm}>
+        <form className="add-form d-flex" onSubmit={(e) => addEmploy(e)}>
           <input
             type="text"
             className="form-control new-post-label"
@@ -32,7 +31,7 @@ class EmployeesAddForm extends React.Component {
             placeholder="З/П в $?"
             name="salary"
             onChange={this.handleInformEmpoyers}/>
-          <button type="submit" className="btn btn-outline-light">Добавить</button>
+          <button type="submit" className="btn btn-outline-light" >Добавить</button>
         </form>
       </div>
    )
