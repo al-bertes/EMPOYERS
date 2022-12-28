@@ -24,7 +24,7 @@ class App extends React.Component {
         {name: 'koij', salary: 122, id: uniqueId(), increase: true, isFavorite: true}
       ],
       searchData: '',
-      activeFilter: 'moreThen'
+      activeFilter: 'all'
     }
   }
   handleDelete = (idItem) => {
@@ -92,8 +92,21 @@ class App extends React.Component {
 
   handleFilter = (target) => {
     this.setState({activeFilter: target})
+    console.log(this.state)
   }
+  changeSalary = (id, value) => {
+    this.setState(({employes}) => ({
+        employes: employes.map((item) => {
+          if (id == item.id) {
 
+            return {...item, salary: Number(value.slice(0, value.length - 1))}
+          }
+
+          return item;
+        })
+
+      }))
+  }
   render() {
     return (
       <div className="app">
@@ -105,7 +118,8 @@ class App extends React.Component {
         <EmployeesList
           employes={this.generateData()}
           onDelete={this.handleDelete}
-          toggleStatus={this.toggleStatus}/>
+          toggleStatus={this.toggleStatus}
+          changeSalary={this.changeSalary}/>
         <EmployeesAddForm addEmploy={(e) => this.handleAddEmploy(e)}/>
       </div>
     );
