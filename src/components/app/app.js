@@ -13,15 +13,11 @@ class App extends React.Component {
     super(props);
     this.state = {
       employes: [
-        {name: 'Albertik', salary: 8000, id: uniqueId(), increase: true, isFavorite: false},
-        {name: 'Lerochka', salary: 2, id: uniqueId(), increase: false, isFavorite: false},
-        {name: 'Tito Mortion', salary: 122, id: uniqueId(), increase: true, isFavorite: true},
-        {name: 'add jkj', salary: 8000, id: uniqueId(), increase: true, isFavorite: false},
-        {name: 'Tri Dva', salary: 2, id: uniqueId(), increase: false, isFavorite: false},
-        {name: 'Ond DDD', salary: 122, id: uniqueId(), increase: true, isFavorite: true},
-        {name: 'Mama miya', salary: 8000, id: uniqueId(), increase: true, isFavorite: false},
-        {name: 'Paranoy ys', salary: 2, id: uniqueId(), increase: false, isFavorite: false},
-        {name: 'koij', salary: 122, id: uniqueId(), increase: true, isFavorite: true}
+        {name: 'Albert Savchenko', salary: 1000, id: uniqueId(), increase: false, isFavorite: false},
+        {name: 'Noy Potopov', salary: 1500, id: uniqueId(), increase: false, isFavorite: false},
+        {name: 'Leonel Messi', salary: 400, id: uniqueId(), increase: true, isFavorite: true},
+        {name: 'Papa Karlo', salary: 150, id: uniqueId(), increase: true, isFavorite: false},
+        {name: 'Mamont Sibirsky', salary: 0, id: uniqueId(), increase: false, isFavorite: false}
       ],
       searchData: '',
       activeFilter: 'all'
