@@ -1,25 +1,26 @@
-import React from 'react';
-import './search-panel.css';
+import React from "react";
+import "./search-panel.css";
 
-class SearchPanel extends React.Component{
-  constructor(props){
+class SearchPanel extends React.Component {
+  constructor(props) {
     super(props);
     this.state = {
-      searchData: ''
-    }
+      searchData: "",
+    };
   }
   updateSearchPanel = (e) => {
-    console.log(e.target.value)
-    this.props.searchEmploy(e.target.value)
-  }
+    console.log(e.target.value);
+    this.props.searchEmploy(e.target.value);
+  };
   render() {
-
     return (
-        <input type="text"
-                className="form-control search-input"
-                placeholder="Найти сотрудника"
-                onChange={this.updateSearchPanel}/>
-    )
+      <input
+        type="text"
+        className="form-control search-input"
+        placeholder="Найти сотрудника"
+        onChange={this.updateSearchPanel}
+      />
+    );
   }
 }
 

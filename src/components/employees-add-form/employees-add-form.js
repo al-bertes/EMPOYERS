@@ -1,17 +1,18 @@
-import React from 'react';
-import './employees-add-form.css';
+import React from "react";
+import "./employees-add-form.css";
 
 class EmployeesAddForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       form: {
-        name: '',
-        salary: ''
-      }
-    }
+        name: "",
+        salary: "",
+      },
+    };
   }
-  handleInformEmpoyers = (e) => this.setState({[e.target.name]: e.target.value});
+  handleInformEmpoyers = (e) =>
+    this.setState({ [e.target.name]: e.target.value });
 
   render() {
     const { addEmploy } = this.props;
@@ -24,17 +25,21 @@ class EmployeesAddForm extends React.Component {
             className="form-control new-post-label"
             placeholder="Как его зовут?"
             name="name"
-            onChange={this.handleInformEmpoyers}/>
+            onChange={this.handleInformEmpoyers}
+          />
           <input
             type="number"
             className="form-control new-post-label"
             placeholder="З/П в $?"
             name="salary"
-            onChange={this.handleInformEmpoyers}/>
-          <button type="submit" className="btn btn-outline-light" >Добавить</button>
+            onChange={this.handleInformEmpoyers}
+          />
+          <button type="submit" className="btn btn-outline-light">
+            Добавить
+          </button>
         </form>
       </div>
-   )
+    );
   }
 }
 
