@@ -88,9 +88,8 @@ class App extends React.Component {
   };
 
   searchEmploy = (e) => {
-    this.setState(({ searchData }) => {
-      return { searchData: e };
-    });
+    this.setState({searchData: e});
+    console.log(this.searchData)
   };
 
   generateData = () => {
@@ -106,7 +105,7 @@ class App extends React.Component {
             .slice(0, this.state.searchData.length);
           return (
             surName.toLocaleLowerCase() ===
-            this.state.searchData.toLocaleLowerCase()
+            this.state.searchData.toLocaleLowerCase() || nameNormolize === this.state.searchData.toLocaleLowerCase()
           );
         }
         return nameNormolize === this.state.searchData.toLocaleLowerCase();
